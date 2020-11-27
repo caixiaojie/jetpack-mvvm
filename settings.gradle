@@ -1,0 +1,4 @@
+include ':app'
+//include ':VersionPlugin'
+includeBuild("VersionPlugin")
+rootProject.name = "JetpackMvvm"

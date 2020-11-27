@@ -1,0 +1,71 @@
+import com.hi.dhl.plugin.*
+
+android {
+    compileSdkVersion BuildConfig.compileSdkVersion
+    buildToolsVersion BuildConfig.buildToolsVersion
+
+    defaultConfig {
+        applicationId "com.cxj.jetpackmvvm"
+        minSdkVersion BuildConfig.minSdkVersion
+        targetSdkVersion BuildConfig.targetSdkVersion
+        versionCode BuildConfig.versionCode
+        versionName BuildConfig.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        dataBinding = true
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+
+    implementation Kt.stdlib
+    implementation AndroidX.appcompat
+    implementation AndroidX.coreKtx
+    implementation AndroidX.constraintlayout
+
+    implementation Material.material
+
+    implementation Fragment.navigation_fragment
+    implementation Fragment.navigation_ui
+    implementation Fragment.navigation_fragment_ktx
+    implementation Fragment.navigation_ui_ktx
+
+    implementation Room.runtime
+    implementation Room.ktx
+    kapt Room.compiler
+
+    implementation Lifecycle.lifecycle
+
+    implementation Coil.coil
+
+    implementation Retrofit.retrofit
+    implementation Retrofit.gson
+    implementation Retrofit.logging
+    implementation Retrofit.persistentCookieJar
+
+    implementation Koin.core
+    implementation Koin.viewmodel
+
+
+    testImplementation Depend.junit
+    androidTestImplementation Depend.androidTestJunit
+    androidTestImplementation Depend.espressoCore
+
+}
