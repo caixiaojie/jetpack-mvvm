@@ -29,11 +29,17 @@ object Versions {
     const val material = "1.2.1"
     const val lifecycle = "2.2.0"
     const val coil = "1.1.0"
+    const val mmkv = "1.2.6"
 
     const val junit = "4.12"
     const val junitExt = "1.1.2"
     const val espressoCore = "3.3.0"
     const val jDatabinding = "1.0.1"
+    const val qmui = "2.0.0-alpha11"
+    const val adapter = "3.0.4"
+    const val smartRefresh = "2.0.1"
+    const val banner = "3.2.0"
+    const val immersionbar = "3.0.0"
 }
 
 object AndroidX {
@@ -101,12 +107,47 @@ object Coil {
     const val coil = "io.coil-kt:coil:${Versions.coil}"
 }
 
+object CymChad {
+    const val adapter = "com.github.CymChad:BaseRecyclerViewAdapterHelper:${Versions.adapter}"
+}
+
 object Material {
     const val material = "com.google.android.material:material:${Versions.material}"
 }
 
 object Lifecycle {
     const val lifecycle = "androidx.lifecycle:lifecycle-extensions:${Versions.lifecycle}"
+}
+
+object X5WebView {
+    const val x5WebView = "com.tencent.tbs.tbssdk:sdk:43939"
+}
+
+object Banner {
+    const val banner = "com.github.zhpanvip:BannerViewPager:${Versions.banner}"
+}
+
+object Tencent {
+    const val mmkv = "com.tencent:mmkv-static:${Versions.mmkv}"
+    const val qmui = "com.qmuiteam:qmui:${Versions.qmui}"
+    const val bugly = "com.tencent.bugly:crashreport:latest.release"
+}
+
+object Immersion {
+    const val immersionbar = "com.gyf.immersionbar:immersionbar:${Versions.immersionbar}"
+    const val immersionbar_components = "com.gyf.immersionbar:immersionbar-components:${Versions.immersionbar}"
+    const val immersionbar_ktx = "com.gyf.immersionbar:immersionbar-ktx:${Versions.immersionbar}"
+}
+
+object SmartRefresh {
+    const val refresh_layout_kernel = "com.scwang.smart:refresh-layout-kernel:${Versions.smartRefresh}"//核心必须依赖
+    const val refresh_header_classics = "com.scwang.smart:refresh-header-classics:${Versions.smartRefresh}"//经典刷新头
+    const val refresh_header_radar = "com.scwang.smart:refresh-header-radar:${Versions.smartRefresh}"//雷达刷新头
+    const val refresh_header_falsify = "com.scwang.smart:refresh-header-falsify:${Versions.smartRefresh}"//虚拟刷新头
+    const val refresh_header_material = "com.scwang.smart:refresh-header-material:${Versions.smartRefresh}"//谷歌刷新头
+    const val refresh_header_two_level = "com.scwang.smart:refresh-header-two-level:${Versions.smartRefresh}"//二级刷新头
+    const val refresh_footer_ball = "com.scwang.smart:refresh-footer-ball:${Versions.smartRefresh}"//球脉冲加载
+    const val refresh_footer_classics = "com.scwang.smart:refresh-footer-classics:${Versions.smartRefresh}"//经典加载
 }
 
 object Depend {

@@ -1,16 +1,28 @@
 package com.cxj.jetpackmvvm.ui.login
 
 import android.app.ProgressDialog
+import android.content.Context
+import android.content.Intent
 import androidx.lifecycle.Observer
+import com.cxj.jetpackmvvm.ui.main.MainActivity
 import com.cxj.jetpackmvvm.R
 import com.cxj.jetpackmvvm.base.BaseVMActivity
 import com.cxj.jetpackmvvm.databinding.ActivityLoginBinding
 import com.cxj.jetpackmvvm.ext.toast
 import com.cxj.jetpackmvvm.model.bean.Title
 import kotlinx.coroutines.ExperimentalCoroutinesApi
+import org.jetbrains.anko.indeterminateProgressDialog
+import org.jetbrains.anko.toast
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class LoginActivity : BaseVMActivity() {
+    companion object {
+        @JvmStatic
+        fun start(context: Context) {
+            val starter = Intent(context, LoginActivity::class.java)
+            context.startActivity(starter)
+        }
+    }
 
     private val loginViewModel by viewModel<LoginViewModel>()
     private val binding by binding<ActivityLoginBinding>(R.layout.activity_login)
@@ -33,6 +45,7 @@ class LoginActivity : BaseVMActivity() {
 
                 it.isSuccess?.let {
                     dismissProgressDialog()
+                    MainActivity.start(this@LoginActivity)
                     finish()
                 }
 

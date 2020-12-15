@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#000000</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#000000</color>
+    <color name="colorLoading">#298E41</color>
+    <!-- 白色 -->
+    <color name="white">#CACACA</color>
+    <!-- 浅白色 -->
+    <color name="plain">#9F9F9F</color>
+    <!-- 字体颜色 -->
+    <color name="text_color_dark">#858585</color>
+    <color name="text_color">#F1F1F1</color>
+    <color name="text_green_dark">#FF006E73</color>
+    <color name="text_green">#25C84C</color>
+    <color name="text_color_black">#B5B5B5</color>
+    <!-- 下拉刷新颜色 -->
+    <color name="refresh">#000000</color>
+    <!--取消按钮-->
+    <color name="red_btn_bg_color">#DD6B55</color>
+
+    <color name="transparent">#00000000</color>
+
+    <color name="default_color">#131313</color>
+
+    <!-- 灰白 -->
+    <color name="grayWhite">#2C2C2C</color>
+
+    <color name="gray_green">#ff32af85</color>
+
+    <color name="secondary_text">#757575</color>
+    <color name="wall">#000000</color>
+
+    <color name="edit_text_bg">#393939</color>
+    <color name="edit_text_focused">#7E7C7C</color>
+    <color name="edit_text_normal">#424242</color>
+
+    <color name="content_bg">#FF000000</color>
+
+    <color name="rb_gray">#838383</color>
+
+    <!-- 灰白 -->
+    <color name="gray">#070707</color>
+
+    <!-- 灰白 -->
+    <color name="grayWhites">#0B0B0B</color>
+
+    <!-- 灰白 -->
+    <!--黑色-->
+    <color name="Black">#F8F8F8</color>
+    <!--筛选框-->
+    <color name="black_33">#C3C3C3</color>
+
+    <color name="black">#000</color>
+
+    <color name="view_bg">#DD2C2C2C</color>
+
+    <color name="yellow">#FEC86D</color>
+
+    <color name="colorBackground">#000000</color>
+
+    <color name="floatBackground">#353535</color>
+
+    <color name="login_normal_solid">#ff1E1E21</color>
+    <color name="login_normal_stroke">#14e0e0f0</color>
+    <color name="login_pressed_solid">#060608</color>
+    <color name="login_pressed_stroke">#14e0e0f0</color>
+
+    <color name="exit_login_normal_solid">#C62222</color>
+    <color name="exit_login_normal_stroke">#C62222</color>
+    <color name="exit_login_pressed_solid">#A51818</color>
+    <color name="exit_login_pressed_stroke">#A51818</color>
+
+    <color name="article_pressed">#151515</color>
+
+    <color name="shortcut_icon">#BFBFBF</color>
+
+    <color name="almanac_fragment_content_dividline_color">#FF57575F</color>
+    <color name="lunar_fragment_content_gb">#FF1E1E21</color>
+    <color name="almanac_fragment_content_textcolor1">#FFE0E0F0</color>
+    <color name="almanac_fragment_content_textcolor2">#6c6c73</color>
+    <color name="almanac_fragment_content_textcolor3">#FD7B72</color>
+
+</resources>

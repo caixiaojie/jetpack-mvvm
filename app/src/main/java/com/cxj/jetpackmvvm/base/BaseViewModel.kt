@@ -13,7 +13,7 @@ open class BaseViewModel : ViewModel() {
 
     open class UiState<T>(
             val isLoading: Boolean = false,
-            val isRefresh: Boolean = false,
+            val isRefresh: Boolean = false,//是否是手动刷新 手动刷新不显示loading（刷新控件自带有loading）
             val isSuccess: T? = null,
             val isError: String?= null
     )

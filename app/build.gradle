@@ -12,6 +12,15 @@ android {
         versionName BuildConfig.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [
+                        "room.schemaLocation":"$projectDir/schemas".toString(),  //配置并启用架构导出到给定目录中【"$projectDir/schemas".toString()】的json文件功能
+                        "room.incremental":"true",  //启用 Gradle 增量注释处理器
+                        "room.expandProjection":"true"] //配置 Room 以重写查询 ，设置成false则不需要导出到指定目录json文件
+            }
+        }
     }
 
     buildTypes {
@@ -62,6 +71,27 @@ dependencies {
 
     implementation Koin.core
     implementation Koin.viewmodel
+
+    implementation Anko.common
+
+    implementation X5WebView.x5WebView
+
+    implementation Tencent.mmkv
+    implementation Tencent.qmui
+    implementation Tencent.bugly
+
+    implementation CymChad.adapter
+
+    implementation SmartRefresh.refresh_layout_kernel
+    implementation SmartRefresh.refresh_header_classics
+    implementation SmartRefresh.refresh_header_material
+    implementation SmartRefresh.refresh_footer_classics
+
+    implementation Banner.banner
+
+    implementation Immersion.immersionbar
+    implementation Immersion.immersionbar_components
+    implementation Immersion.immersionbar_ktx
 
 
     testImplementation Depend.junit

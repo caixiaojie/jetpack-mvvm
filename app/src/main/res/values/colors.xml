@@ -3,7 +3,6 @@
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
-    <color name="white">#ffffff</color>
     <color name="black">#000000</color>
     <color name="gray">#8e8e8e</color>
     <color name="light_gray">#e0e0e0</color>
@@ -11,4 +10,126 @@
     <color name="text_gray">#2f2f2f</color>
     <color name="scrim">#99323232</color>
     <color name="dark_icon">#99000000</color>
+    <color name="bg">#F0F0F0</color>
+
+    <color name="colorLoading">#41DF67</color>
+    <!-- 白色 -->
+    <color name="white">#ffffff</color>
+    <!-- 浅白色 -->
+    <color name="plain">#CDCDCD</color>
+    <!-- 字体颜色 -->
+    <color name="text_color_dark">#464646</color>
+    <color name="text_color">#5A5A5A</color>
+    <color name="text_green_dark">#FF006E73</color>
+    <color name="text_green">#25C84C</color>
+    <color name="text_color_black">#202020</color>
+    <!-- 下拉刷新颜色 -->
+    <color name="refresh">#F8F8F8</color>
+    <!--取消按钮-->
+    <color name="red_btn_bg_color">#DD6B55</color>
+
+    <color name="transparent">#00000000</color>
+
+    <color name="default_color">#F3F3F3</color>
+
+    <!-- 灰白 -->
+    <color name="grayWhite">#e9e5e5</color>
+
+    <color name="gray_green">#ff32af85</color>
+
+    <color name="secondary_text">#757575</color>
+    <color name="wall">#fff5f5f5</color>
+
+    <color name="edit_text_bg">#FFFFFF</color>
+    <color name="edit_text_focused">#CDCDCD</color>
+    <color name="edit_text_normal">#E4E4E4</color>
+
+    <color name="content_bg">#fafafa</color>
+
+
+    <color name="rb_gray">#FAFAFA</color>
+
+    <!-- 灰白 -->
+
+    <!-- 灰白 -->
+    <color name="grayWhites">#F8F8F8</color>
+
+    <!-- 灰白 -->
+    <!--黑色-->
+    <color name="Black">#000000</color>
+    <!--筛选框-->
+    <color name="black_33">#333333</color>
+
+
+    <color name="view_bg">#dde6e4e4</color>
+
+    <color name="yellow">#FEC86D</color>
+
+    <color name="colorBackground">#FDFDFD</color>
+
+    <color name="floatBackground">#FAFAFA</color>
+
+    <color name="login_normal_solid">#ffffffff</color>
+    <color name="login_normal_stroke">#ffe0e0e0</color>
+    <color name="login_pressed_solid">#ededed</color>
+    <color name="login_pressed_stroke">#ededed</color>
+
+    <color name="exit_login_normal_solid">#FA2525</color>
+    <color name="exit_login_normal_stroke">#FA2525</color>
+    <color name="exit_login_pressed_solid">#D61616</color>
+    <color name="exit_login_pressed_stroke">#D61616</color>
+
+    <color name="article_pressed">#e9e5e5</color>
+
+    <color name="shortcut_icon">#252525</color>
+
+    <color name="almanac_fragment_content_dividline_color">#CDCDCD</color>
+    <color name="lunar_fragment_content_gb">#FFFFFF</color>
+    <color name="almanac_fragment_content_textcolor1">#333333</color>
+    <color name="almanac_fragment_content_textcolor2">#999999</color>
+    <color name="almanac_fragment_content_textcolor3">#FF675C</color>
+
+
+
+    <!-- common -->
+    <color name="app_color_blue">#00A8E1</color>
+    <color name="app_color_blue_disabled">#8000A8E1</color>
+    <color name="app_color_blue_pressed">#c000A8E1</color>
+
+    <color name="app_color_blue_2">#31BDF3</color>
+    <color name="app_color_blue_2_disabled">#7F31BDF3</color>
+    <color name="app_color_blue_2_pressed">#7F31BDF3</color>
+
+    <color name="app_color_blue_3">#EBF9FF</color>
+    <color name="app_color_blue_3_disabled">#7FEBF9FF</color>
+    <color name="app_color_blue_3_pressed">#7FEBF9FF</color>
+
+    <color name="app_color_theme_1">#EF5362</color> <!-- Grapefruit -->
+    <color name="app_color_theme_2">#FE6D4B</color> <!-- Bittersweet -->
+    <color name="app_color_theme_3">#FFCF47</color> <!-- Sunflower -->
+    <color name="app_color_theme_4">#9FD661</color> <!-- Grass -->
+    <color name="app_color_theme_5">#3FD0AD</color> <!-- Mint -->
+    <color name="app_color_theme_6">#2BBDF3</color> <!-- Aqua -->
+    <color name="app_color_theme_7">#5A9AEF</color> <!-- Blue Jeans -->
+    <color name="app_color_theme_8">#AC8FEF</color> <!-- Lavender -->
+    <color name="app_color_theme_9">#EE85C1</color> <!-- Pink Rose -->
+
+    <color name="app_color_description">@color/qmui_config_color_gray_5</color>
+
+    <color name="bar_divider">#D4D6D8</color>
+    <color name="tab_panel_bg">#ffffff</color>
+    <color name="tab_panel_divider">@color/bar_divider</color>
+
+    <!-- Components 组件 -->
+    <color name="radiusImageView_border_color">@color/app_color_theme_2</color>
+    <color name="radiusImageView_selected_border_color">@color/app_color_theme_1</color>
+    <color name="radiusImageView_selected_mask_color">#7FEF5362</color>
+
+    <!-- Helper 系列界面 -->
+
+    <!-- ColorHelper 颜色工具 -->
+    <color name="colorHelper_square_alpha_background">@color/app_color_theme_4</color>
+    <color name="colorHelper_square_from_ratio_background">@color/app_color_blue</color>
+    <color name="colorHelper_square_to_ratio_background">@color/app_color_theme_3</color>
+    <color name="white_alpha_75">#BFFFFFFF</color>
 </resources>

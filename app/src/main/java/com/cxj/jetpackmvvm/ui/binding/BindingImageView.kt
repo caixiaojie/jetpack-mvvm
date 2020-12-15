@@ -20,13 +20,17 @@ import android.app.Activity
 import android.content.Context
 import android.view.View
 import android.widget.ImageView
+import androidx.annotation.DrawableRes
 import androidx.annotation.Px
 import androidx.databinding.BindingAdapter
+import coil.Coil
 import coil.load
+import coil.request.ImageRequest
 import coil.transform.BlurTransformation
 import coil.transform.CircleCropTransformation
 import coil.transform.GrayscaleTransformation
 import coil.transform.RoundedCornersTransformation
+import com.cxj.jetpackmvvm.App
 import com.cxj.jetpackmvvm.R
 
 
@@ -39,10 +43,17 @@ import com.cxj.jetpackmvvm.R
  */
 //普通用法
 @BindingAdapter("bindingImage")
+fun bindingImage(imageView: ImageView, @DrawableRes drawableResId: Int) {
+    imageView.load(drawableResId) {
+        crossfade(true)
+        placeholder(R.color.default_color)
+    }
+}
+@BindingAdapter("bindingImage")
 fun bindingImage(imageView: ImageView, url: String) {
     imageView.load(url) {
         crossfade(true)
-        placeholder(R.mipmap.ic_launcher_round)
+        placeholder(R.color.default_color)
     }
 }
 //固定大小

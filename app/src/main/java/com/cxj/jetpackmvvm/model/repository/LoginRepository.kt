@@ -6,8 +6,7 @@ import com.cxj.jetpackmvvm.model.bean.User
 import com.cxj.jetpackmvvm.model.bean.doError
 import com.cxj.jetpackmvvm.model.bean.doSuccess
 import com.cxj.jetpackmvvm.ui.login.LoginUiState
-import com.cxj.jetpackmvvm.util.Preference
-import com.google.gson.Gson
+import com.cxj.jetpackmvvm.util.MMkvHelper
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.*
@@ -19,9 +18,7 @@ import kotlinx.coroutines.flow.*
  *      des:
  * </pre>
  */
-class LoginRepository(val service: WanService) : BaseRepository() {
-    private var isLogin by Preference(Preference.IS_LOGIN, false)
-    private var userJson by Preference(Preference.USER_GSON, "")
+class LoginRepository(private val service: WanService) : BaseRepository() {
 
     @ExperimentalCoroutinesApi
     suspend fun loginFlow(userName: String, passWord: String) = flow {
@@ -31,8 +28,8 @@ class LoginRepository(val service: WanService) : BaseRepository() {
             return@flow
         }
         service.login(userName, passWord).doSuccess { user ->
-            isLogin = true
-            userJson = Gson().toJson(user)
+            MMkvHelper.getInstance().saveLogin(true)
+            MMkvHelper.getInstance().saveUserInfo(user)
             emit(LoginUiState(isSuccess = user, enableLoginButton = true))
         }.doError { errorMsg ->
             emit(LoginUiState<User>(isError = errorMsg, enableLoginButton = true))

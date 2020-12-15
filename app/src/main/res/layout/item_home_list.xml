@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="android.text.TextUtils"/>
+        <import type="android.view.View"/>
+        <variable
+            name="article"
+            type="com.cxj.jetpackmvvm.model.bean.Article" />
+    </data>
+
+    <com.qmuiteam.qmui.layout.QMUIRelativeLayout
+        android:id="@+id/articleLlItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@color/qmui_config_color_white"
+        app:qmui_radius="@dimen/dp_5"
+        app:qmui_shadowAlpha="0.5"
+        app:qmui_shadowElevation="@dimen/dp_5"
+        app:qmui_outerNormalColor="?attr/qmui_skin_support_color_background"
+        app:qmui_borderColor="?attr/qmui_skin_support_color_separator"
+        app:qmui_showBorderOnlyBeforeL="true"
+        android:padding="@dimen/dp_10">
+
+        <TextView
+            android:id="@+id/articleTvAuthor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/dp_13"
+            android:text="@{(TextUtils.isEmpty(article.author)) ? article.shareUser : article.author}"
+            tools:text="作者" />
+
+        <TextView
+            android:id="@+id/articleTvNew"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dp_5"
+            android:layout_toEndOf="@id/articleTvAuthor"
+            android:text="@string/newest"
+            android:textColor="@color/red_btn_bg_color"
+            android:textSize="@dimen/dp_13" />
+
+        <TextView
+            android:id="@+id/articleTvTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dp_5"
+            android:layout_toEndOf="@id/articleTvNew"
+            android:text="@string/topping"
+            android:textColor="@color/red_btn_bg_color"
+            android:textSize="@dimen/dp_13" />
+
+        <TextView
+            android:id="@+id/articleTvTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginHorizontal="@dimen/dp_5"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/dp_13"
+            tools:text="发布时间" />
+
+
+        <LinearLayout
+            android:id="@+id/articleLlTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/articleTvAuthor"
+            android:layout_marginTop="@dimen/dp_4"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/articleTvTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/text_color_black"
+                android:textSize="@dimen/dp_15"
+                android:textStyle="bold"
+                android:text="@{article.title}"
+                tools:text="文章标题很长很长" />
+
+            <ImageView
+                android:id="@+id/articleIvImg"
+                android:layout_width="@dimen/dp_70"
+                android:layout_height="@dimen/dp_70"
+                bindingImage="@{article.envelopePic}"
+                android:visibility="@{(TextUtils.isEmpty(article.envelopePic)) ? View.GONE : View.VISIBLE}" />
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/articleTvChapterName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/articleLlTitle"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/dp_4"
+            android:gravity="center"
+            android:textColor="@color/red_btn_bg_color"
+            android:textSize="@dimen/dp_13"
+            android:text="@{article.superChapterName}"
+            tools:text="分类" />
+
+        <ImageView
+            android:id="@+id/articleIvCollect"
+            android:layout_width="@dimen/dp_20"
+            android:layout_height="@dimen/dp_20"
+            android:layout_below="@id/articleLlTitle"
+            android:layout_alignParentEnd="true"
+            android:layout_marginHorizontal="@dimen/dp_5"
+            android:layout_marginTop="@dimen/dp_8"
+            android:src="@color/red_btn_bg_color" />
+
+    </com.qmuiteam.qmui.layout.QMUIRelativeLayout>
+</layout>
+

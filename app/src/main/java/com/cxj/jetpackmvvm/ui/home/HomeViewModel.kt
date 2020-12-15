@@ -2,12 +2,43 @@ package com.cxj.jetpackmvvm.ui.home
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import androidx.lifecycle.Transformations
+import androidx.room.withTransaction
+import com.cxj.jetpackmvvm.base.BaseViewModel
+import com.cxj.jetpackmvvm.model.bean.Article
+import com.cxj.jetpackmvvm.model.bean.BannerBean
+import com.cxj.jetpackmvvm.model.pojo.QueryHomeArticle
+import com.cxj.jetpackmvvm.model.repository.HomeRepository
+import com.cxj.jetpackmvvm.room.WanDataBase
+import kotlinx.coroutines.*
+import kotlinx.coroutines.flow.collect
 
-class HomeViewModel : ViewModel() {
+@FlowPreview
+@ExperimentalCoroutinesApi
+class HomeViewModel(private val repository: HomeRepository) : BaseViewModel() {
+    private val pageLiveData = MutableLiveData<QueryHomeArticle>()
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is home Fragment"
+    private val _mHomeArticleInfo : MutableLiveData<UiState<List<Article>>> = MutableLiveData()
+    val uiHomeArticleState: LiveData<UiState<List<Article>>>
+        get() = _mHomeArticleInfo
+
+
+    private val _mBannerInfo : MutableLiveData<UiState<List<BannerBean>>> = MutableLiveData()
+    val uiHomeBannerState: LiveData<UiState<List<BannerBean>>>
+        get() = _mBannerInfo
+
+
+    fun getHomeArticle(query:QueryHomeArticle) = launchOnUI {
+        repository.getHomeArticle(query).collect {
+            _mHomeArticleInfo.value = it
+        }
     }
-    val text: LiveData<String> = _text
+
+    fun getHomeBanner() {
+        launchOnUI {
+            repository.getBanner().collect {
+                _mBannerInfo.value = it
+            }
+        }
+    }
 }

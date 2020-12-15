@@ -3,7 +3,7 @@ package com.cxj.jetpackmvvm.model.bean
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.coroutineScope
 import java.io.IOException
-import com.cxj.jetpackmvvm.base.Result
+import com.cxj.jetpackmvvm.base.WanResult
 
 /**
  * <pre>
@@ -16,14 +16,14 @@ import com.cxj.jetpackmvvm.base.Result
 data class WanResponse<out T>(val errorCode: Int, val errorMsg: String, val data: T)
 
 suspend fun <T : Any> WanResponse<T>.executeResponse(successBlock: (suspend CoroutineScope.() -> Unit)? = null,
-                                                     errorBlock: (suspend CoroutineScope.() -> Unit)? = null): Result<T> {
+                                                     errorBlock: (suspend CoroutineScope.() -> Unit)? = null): WanResult<T> {
     return coroutineScope {
         if (errorCode == -1) {
             errorBlock?.let { it() }
-            Result.Error(IOException(errorMsg))
+            WanResult.Failure(IOException(errorMsg))
         } else {
             successBlock?.let { it() }
-            Result.Success(data)
+            WanResult.Success(data)
         }
     }
 }

@@ -26,7 +26,7 @@ class LoginViewModel(val repository: LoginRepository) : BaseViewModel() {
 
     private fun isInputValid(userName: String, passWord: String) = userName.isNotBlank() && passWord.isNotBlank()
 
-    fun loginDataChanged() {
+    private fun loginDataChanged() {
         _uiState.value = LoginUiState(enableLoginButton = isInputValid(userName.get()
             ?: "", passWord.get() ?: ""))
     }
