@@ -1,15 +1,16 @@
 package com.cxj.jetpackmvvm.model.repository
 
+import android.util.Log
+import com.cxj.jetpackmvvm.base.BaseViewModel
 import com.cxj.jetpackmvvm.model.api.BaseRepository
 import com.cxj.jetpackmvvm.model.api.WanService
-import com.cxj.jetpackmvvm.model.bean.User
-import com.cxj.jetpackmvvm.model.bean.doError
-import com.cxj.jetpackmvvm.model.bean.doSuccess
+import com.cxj.jetpackmvvm.model.bean.*
 import com.cxj.jetpackmvvm.ui.login.LoginUiState
 import com.cxj.jetpackmvvm.util.MMkvHelper
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.*
+import androidx.lifecycle.*
 
 /**
  * <pre>
@@ -56,3 +57,4 @@ class LoginRepository(private val service: WanService) : BaseRepository() {
     }.flowOn(Dispatchers.IO)
         .catch { emit(LoginUiState(isError = it.message, enableLoginButton = true)) }
 }
+

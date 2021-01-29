@@ -47,6 +47,10 @@ dependencies {
     implementation Kt.stdlib
     implementation AndroidX.appcompat
     implementation AndroidX.coreKtx
+    implementation AndroidX.lifecycle_livedata
+    implementation AndroidX.lifecycle_extensions
+    implementation AndroidX.lifecycle_viewmodel
+    implementation AndroidX.lifecycle_runtime
     implementation AndroidX.constraintlayout
 
     implementation Material.material

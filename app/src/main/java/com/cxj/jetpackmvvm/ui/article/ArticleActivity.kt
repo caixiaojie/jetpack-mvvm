@@ -5,6 +5,7 @@ import com.cxj.jetpackmvvm.R
 import com.cxj.jetpackmvvm.base.BaseVMActivity
 import com.cxj.jetpackmvvm.databinding.ActivityArticleLayoutBinding
 import com.cxj.jetpackmvvm.ext.toast
+import com.cxj.jetpackmvvm.util.WaterMarkUtil
 import com.gyf.immersionbar.ImmersionBar
 import com.qmuiteam.qmui.skin.QMUISkinManager
 import com.qmuiteam.qmui.widget.dialog.QMUIBottomSheet.BottomGridSheetBuilder
@@ -39,6 +40,7 @@ class ArticleActivity : BaseVMActivity() {
     }
     override fun initView() {
         binding.run {
+            WaterMarkUtil.showWatermarkView(this@ArticleActivity, "Hello Word!")
             articleImgRight.setOnClickListener {
                 showSimpleBottomSheetGrid()
             }

@@ -1,12 +1,17 @@
 package com.cxj.jetpackmvvm.base
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.liveData
 import androidx.lifecycle.viewModelScope
+import com.cxj.jetpackmvvm.App
+import com.cxj.jetpackmvvm.model.bean.WanResponse
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import kotlin.Result
 
 
 open class BaseViewModel : ViewModel() {
@@ -43,3 +48,4 @@ open class BaseViewModel : ViewModel() {
         }
     }
 }
+

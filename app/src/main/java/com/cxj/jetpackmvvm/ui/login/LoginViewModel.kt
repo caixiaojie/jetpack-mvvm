@@ -7,7 +7,7 @@ import com.cxj.jetpackmvvm.base.BaseViewModel
 import com.cxj.jetpackmvvm.model.bean.User
 import com.cxj.jetpackmvvm.model.repository.LoginRepository
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.*
 
 /**
  * <pre>
@@ -52,4 +52,6 @@ class LoginViewModel(val repository: LoginRepository) : BaseViewModel() {
     }
 
     val verifyInput: (String) -> Unit = { loginDataChanged() }
+
+
 }

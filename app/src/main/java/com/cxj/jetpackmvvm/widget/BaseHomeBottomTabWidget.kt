@@ -12,6 +12,7 @@ import com.cxj.jetpackmvvm.ui.home.HomePageFragment
 import com.cxj.jetpackmvvm.ui.official.OfficialAccountsFragment
 import com.cxj.jetpackmvvm.ui.profile.ProfileFragment
 import com.cxj.jetpackmvvm.ui.project.ProjectFragment
+import com.cxj.jetpackmvvm.ui.project.ProjectFragmentV2
 
 abstract class BaseHomeBottomTabWidget @JvmOverloads constructor(
     context: Context?,
@@ -92,7 +93,8 @@ abstract class BaseHomeBottomTabWidget @JvmOverloads constructor(
     }
 
     private val mHomeFragment: HomePageFragment by lazy { HomePageFragment.newInstance() }
-    private val mProjectFragment: ProjectFragment by lazy { ProjectFragment.newInstance() }
+//    private val mProjectFragment: ProjectFragment by lazy { ProjectFragment.newInstance() }
+    private val mProjectFragment: ProjectFragmentV2 by lazy { ProjectFragmentV2.newInstance() }
     private val mObjectListFragment: OfficialAccountsFragment by lazy { OfficialAccountsFragment.newInstance() }
     private val mProfileFragment: ProfileFragment by lazy { ProfileFragment.newInstance() }
 

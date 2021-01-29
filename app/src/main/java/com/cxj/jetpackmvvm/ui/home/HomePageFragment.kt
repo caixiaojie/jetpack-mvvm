@@ -14,6 +14,7 @@ import com.cxj.jetpackmvvm.ext.toast
 import com.cxj.jetpackmvvm.model.bean.BannerBean
 import com.cxj.jetpackmvvm.model.pojo.QueryHomeArticle
 import com.cxj.jetpackmvvm.ui.article.*
+import com.cxj.jetpackmvvm.util.WaterMarkUtil
 import com.gyf.immersionbar.ImmersionBar
 import com.zhpan.bannerview.BannerViewPager
 import com.zhpan.indicator.enums.IndicatorSlideMode
@@ -46,6 +47,7 @@ class HomePageFragment : BaseVMFragment<FragmentHomeBinding>(R.layout.fragment_h
     }
     override fun initView() {
         binding.run {
+            WaterMarkUtil.showWatermarkView(requireActivity(), "Hello Word!")
             adapter = rvAdapter
             rvAdapter.headerWithEmptyEnable = true
             mSmartRefresh.setOnRefreshListener {

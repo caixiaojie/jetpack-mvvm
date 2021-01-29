@@ -37,6 +37,7 @@ class HomeViewModel(private val repository: HomeRepository) : BaseViewModel() {
     fun getHomeBanner() {
         launchOnUI {
             repository.getBanner().collect {
+
                 _mBannerInfo.value = it
             }
         }

@@ -8,6 +8,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import com.cxj.jetpackmvvm.R
 import com.cxj.jetpackmvvm.util.DoubleClickExitDetector
+import com.cxj.jetpackmvvm.util.WaterMarkUtil
 import com.gyf.immersionbar.ImmersionBar
 import com.qmuiteam.qmui.util.QMUIStatusBarHelper
 import kotlin.system.exitProcess

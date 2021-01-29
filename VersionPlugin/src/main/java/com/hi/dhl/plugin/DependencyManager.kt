@@ -40,6 +40,7 @@ object Versions {
     const val smartRefresh = "2.0.1"
     const val banner = "3.2.0"
     const val immersionbar = "3.0.0"
+    const val lifecycle_version = "2.2.0"
 }
 
 object AndroidX {
@@ -53,6 +54,13 @@ object AndroidX {
     const val workTesting = "androidx.work:work-testing:${Versions.work}"
     const val cardview = "androidx.cardview:cardview:${Versions.cardview}"
     const val recyclerview = "androidx.recyclerview:recyclerview:${Versions.recyclerview}"
+    const val lifecycle_extensions = "androidx.lifecycle:lifecycle-extensions:${Versions.lifecycle_version}"
+    const val lifecycle_livedata = "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.lifecycle_version}"
+    const val lifecycle_viewmodel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycle_version}"
+    const val lifecycle_runtime = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.lifecycle_version}"
+    //api "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0"
+    //    api "androidx.lifecycle:lifecycle-runtime-ktx:2.2.0"
+    //    api "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
 }
 
 object Room {
