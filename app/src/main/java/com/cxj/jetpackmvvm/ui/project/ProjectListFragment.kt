@@ -6,6 +6,7 @@ import androidx.core.os.bundleOf
 import androidx.lifecycle.Observer
 import com.cxj.jetpackmvvm.R
 import com.cxj.jetpackmvvm.base.BaseVMFragment
+import com.cxj.jetpackmvvm.base.BaseVMLazyFragment
 import com.cxj.jetpackmvvm.databinding.FragmentProjectListBinding
 import com.cxj.jetpackmvvm.ext.startKtxActivity
 import com.cxj.jetpackmvvm.ext.toast
@@ -21,7 +22,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
  *      des:
  * </pre>
  */
-class ProjectListFragment : BaseVMFragment<FragmentProjectListBinding>(R.layout.fragment_project_list) {
+class ProjectListFragment : BaseVMLazyFragment<FragmentProjectListBinding>(R.layout.fragment_project_list) {
     private var page = 1
     private var cid = 0
     private val queryArticle by lazy { QueryArticle(page,cid,false) }
@@ -70,6 +71,11 @@ class ProjectListFragment : BaseVMFragment<FragmentProjectListBinding>(R.layout.
                 }
             }
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+
     }
 
     override fun initData() {
