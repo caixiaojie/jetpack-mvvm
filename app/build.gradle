@@ -102,4 +102,6 @@ dependencies {
     androidTestImplementation Depend.androidTestJunit
     androidTestImplementation Depend.espressoCore
 
+    implementation project(path: ':reactHttp')
+
 }
