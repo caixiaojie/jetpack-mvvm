@@ -26,8 +26,8 @@ import java.util.concurrent.TimeUnit
  * </pre>
  */
 abstract class BaseRemoteDataSource<Api : Any>(
-    protected val iUiActionEvent: IUIActionEvent?,
-    protected val apiServiceClass: Class<Api>,
+    private val iUiActionEvent: IUIActionEvent?,
+    private val apiServiceClass: Class<Api>,
 ) : ICoroutineEvent {
 
     companion object {
