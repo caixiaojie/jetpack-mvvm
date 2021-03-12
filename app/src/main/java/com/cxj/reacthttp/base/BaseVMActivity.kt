@@ -1,15 +1,22 @@
 package com.cxj.reacthttp.base
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.annotation.CallSuper
 import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import com.cxj.jetpackmvvm.R
+import com.zdkj.ktx.ext.startKtxActivity
+import com.cxj.jetpackmvvm.ui.login.LoginActivity
 import com.cxj.jetpackmvvm.util.DoubleClickExitDetector
+import com.cxj.reacthttp.event.TokenInvalidEvent
 import com.gyf.immersionbar.ImmersionBar
 import com.zdkj.reacthttp.base.BaseReactiveActivity
+import org.greenrobot.eventbus.EventBus
+import org.greenrobot.eventbus.Subscribe
+import org.greenrobot.eventbus.ThreadMode
 import kotlin.system.exitProcess
+
 
 /**
  * <pre>
@@ -80,5 +87,27 @@ abstract class BaseVMActivity : BaseReactiveActivity(){
     }
     open fun getLoadingView(): Int {
         return R.layout.loading_view
+    }
+
+    override fun onStart() {
+        super.onStart()
+        EventBus.getDefault().register(this)
+    }
+
+    override fun onStop() {
+        super.onStop()
+        EventBus.getDefault().unregister(this)
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    open fun onMessageEvent(event: MessageEvent?) { /* Do something */
+        event?.let {
+            when(it) {
+                is TokenInvalidEvent -> {
+                    val flag = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+                    startKtxActivity<LoginActivity>(flags = flag)
+                }
+            }
+        }
     }
 }

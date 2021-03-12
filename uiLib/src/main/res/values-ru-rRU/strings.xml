@@ -1,0 +1,16 @@
+<resources>
+    <string name="uix_address_pick_result">адрес:</string>
+
+    <string name="uix_rating_cancel">Отменить</string>
+    <string name="uix_rating_confirm">Ок</string>
+    <string name="uix_rating_dialog_title">Оценить приложение</string>
+    <string name="uix_rating_feedback_cancel">Отклонить</string>
+    <string name="uix_rating_feedback_confirm">Обратная связь</string>
+    <string name="uix_rating_feedback_content">Хотите помочь нам улучшить приложение с помощью отзывов?</string>
+    <string name="uix_rating_feedback_page_title">Обратная связь</string>
+    <string name="uix_rating_feedback_title">Извините за то, что разочаровал вас</string>
+    <string name="uix_rating_market_cancel">Отклонить</string>
+    <string name="uix_rating_market_confirm">Оценить</string>
+    <string name="uix_rating_market_content">Хотите поддержать разработчика, поставив хорошую оценку в магазине приложений?</string>
+    <string name="uix_rating_market_title">Рад, что вам понравилось наше приложение</string>
+</resources>

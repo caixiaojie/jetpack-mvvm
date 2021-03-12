@@ -1,7 +1,7 @@
 package com.cxj.jetpackmvvm.model.api
 
 import com.cxj.jetpackmvvm.App
-import com.cxj.jetpackmvvm.ext.isConnectedNetwork
+import com.zdkj.ktx.ext.isConnectedNetwork
 import com.franmontiel.persistentcookiejar.PersistentCookieJar
 import com.franmontiel.persistentcookiejar.cache.SetCookieCache
 import com.franmontiel.persistentcookiejar.persistence.SharedPrefsCookiePersistor

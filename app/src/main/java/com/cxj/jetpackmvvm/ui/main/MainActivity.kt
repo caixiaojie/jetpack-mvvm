@@ -1,17 +1,10 @@
 package com.cxj.jetpackmvvm.ui.main
 
 import android.content.Context
-import android.content.DialogInterface
 import android.content.Intent
 import com.cxj.jetpackmvvm.R
-import com.cxj.jetpackmvvm.base.BaseVMActivity
 import com.cxj.jetpackmvvm.databinding.ActivityMainBinding
-import com.cxj.jetpackmvvm.ext.toast
-import com.cxj.jetpackmvvm.util.PhotoUtils
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.qmuiteam.qmui.widget.dialog.QMUIDialog
-import com.qmuiteam.qmui.widget.dialog.QMUIDialogAction
-import kotlinx.android.synthetic.main.activity_main.*
+import com.cxj.reacthttp.base.BaseVMActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : BaseVMActivity() {

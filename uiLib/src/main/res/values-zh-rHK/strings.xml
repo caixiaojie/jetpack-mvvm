@@ -1,0 +1,16 @@
+<resources>
+    <string name="uix_address_pick_result">地址：</string>
+
+    <string name="uix_rating_dialog_title">為應用打分</string>
+    <string name="uix_rating_confirm">確定</string>
+    <string name="uix_rating_cancel">取消</string>
+    <string name="uix_rating_feedback_title">很抱歉，沒能讓你滿意</string>
+    <string name="uix_rating_feedback_content">你願意為我們提供一些回饋來幫助我們優化應用嗎？</string>
+    <string name="uix_rating_feedback_confirm">去回饋</string>
+    <string name="uix_rating_feedback_cancel">狠心拒絕</string>
+    <string name="uix_rating_market_title">很高興你喜歡我們的應用</string>
+    <string name="uix_rating_market_content">你願意到應用商店來評分來鼓勵開發者嗎？</string>
+    <string name="uix_rating_market_confirm">去評分</string>
+    <string name="uix_rating_market_cancel">狠心拒絕</string>
+    <string name="uix_rating_feedback_page_title">意見回饋</string>
+</resources>

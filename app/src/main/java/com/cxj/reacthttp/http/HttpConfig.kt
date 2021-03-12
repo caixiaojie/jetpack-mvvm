@@ -8,11 +8,8 @@ package com.cxj.reacthttp.http
  * </pre>
  */
 object HttpConfig {
-    const val BASE_URL = "https://www.wanandroid.com"
-
-    const val KEY = "key"
-
-    const val KEY_MAP = "fb0a1b0d89f3b93adca639f0a29dbf23"
+//    const val BASE_URL = "https://www.wanandroid.com"
+    const val BASE_URL = "http://172.30.200.99:9898"
 
     //服务端返回的 code 以 CODE_SERVER 开头
     const val CODE_SERVER_FAIL = -1

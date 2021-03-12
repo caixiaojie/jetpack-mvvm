@@ -8,9 +8,11 @@ import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import com.cxj.jetpackmvvm.R
-import com.cxj.jetpackmvvm.base.VisibilityFragment
 import com.gyf.immersionbar.ImmersionBar
 import com.zdkj.reacthttp.base.BaseReactiveFragment
+import org.greenrobot.eventbus.EventBus
+import org.greenrobot.eventbus.Subscribe
+import org.greenrobot.eventbus.ThreadMode
 
 /**
  * <pre>
@@ -87,5 +89,19 @@ abstract class BaseVMFragment<T : ViewDataBinding>(@LayoutRes val layoutId: Int)
     }
     open fun getLoadingView(): Int {
         return R.layout.loading_view
+    }
+
+    override fun onStart() {
+        super.onStart()
+        EventBus.getDefault().register(this);
+    }
+
+    override fun onStop() {
+        super.onStop()
+        EventBus.getDefault().unregister(this);
+    }
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    open fun onMessageEvent(event: MessageEvent?) { /* Do something */
+
     }
 }

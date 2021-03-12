@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:paddingTop="@dimen/dp_30"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.zdkj.uilib.button.NormalButton
+                android:id="@+id/btn_no_bg"
+                style="@style/MenuItemButton"
+                android:text="无背景对话框" />
+
+            <com.zdkj.uilib.button.NormalButton
+                android:id="@+id/btn_normal"
+                style="@style/MenuItemButton"
+                android:text="普通的对话框 [中间|WRAP|自定义标题|自定义底部]" />
+
+            <com.zdkj.uilib.button.NormalButton
+                android:id="@+id/btn_normal_top"
+                style="@style/MenuItemButton"
+                android:text="普通的对话框 [上方]" />
+
+            <com.zdkj.uilib.button.NormalButton
+                android:id="@+id/btn_normal_bottom"
+                style="@style/MenuItemButton"
+                android:text="普通的对话框 [下方|黑色主题]" />
+
+            <com.zdkj.uilib.button.NormalButton
+                android:id="@+id/btn_editor_normal"
+                style="@style/MenuItemButton"
+                android:text="编辑对话框 [边角4dp|内容无限制]" />
+
+            <com.zdkj.uilib.button.NormalButton
+                android:id="@+id/btn_editor_numeric"
+                style="@style/MenuItemButton"
+                android:text="编辑对话框 [数字|单行|长度10]" />
+
+            <com.zdkj.uilib.button.NormalButton
+                android:id="@+id/btn_list_normal"
+                style="@style/MenuItemButton"
+                android:text="简单的列表" />
+
+            <com.zdkj.uilib.button.NormalButton
+                android:id="@+id/btn_address"
+                style="@style/MenuItemButton"
+                android:text="地址选择对话框" />
+
+            <com.zdkj.uilib.button.NormalButton
+                android:id="@+id/btn_content"
+                style="@style/MenuItemButton"
+                android:text="简单内容对话框" />
+
+            <com.zdkj.uilib.button.NormalButton
+                android:id="@+id/btn_custom_list"
+                style="@style/MenuItemButton"
+                android:text="自定义列表对话框 [带加载状态|支持异步加载]" />
+
+            <com.zdkj.uilib.button.NormalButton
+                android:id="@+id/btn_not_cancelable"
+                style="@style/MenuItemButton"
+                android:text="无法取消的对话框 [慎重点击]" />
+
+            <com.zdkj.uilib.button.NormalButton
+                android:id="@+id/btn_rate_intro"
+                style="@style/MenuItemButton"
+                android:text="应用评分引导对话框" />
+            <com.zdkj.uilib.button.NormalButton
+                android:id="@+id/btn_simple_grid"
+                style="@style/MenuItemButton"
+                android:text="应用评分引导对话框" />
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</layout>

@@ -39,6 +39,10 @@ android {
     buildFeatures {
         dataBinding = true
     }
+
+    viewBinding {
+        enabled = true
+    }
 }
 
 dependencies {
@@ -64,7 +68,6 @@ dependencies {
     implementation Room.ktx
     kapt Room.compiler
 
-    implementation Lifecycle.lifecycle
 
     implementation Coil.coil
 
@@ -97,11 +100,15 @@ dependencies {
     implementation Immersion.immersionbar_components
     implementation Immersion.immersionbar_ktx
 
+    implementation EventBus.eventbus
+
 
     testImplementation Depend.junit
     androidTestImplementation Depend.androidTestJunit
     androidTestImplementation Depend.espressoCore
 
     implementation project(path: ':reactHttp')
+    implementation project(path: ':ktx')
+    implementation project(path: ':uiLib')
 
 }

@@ -67,7 +67,7 @@
     <string name="collection_failed">Favorite Failed</string>
     <string name="collection">Collect</string>
     <string name="cancel_collection">Unfavorite</string>
-    <string name="my_collection">My collection</string>
+    <string name="my_collection">Tips</string>
     <string name="page_is_not_collection">The current page can not favorites</string>
     <string name="copy_succeeded">Copy the success can be directly pasted</string>
     <string name="not_currently_logged_in">Currently logged</string>
@@ -93,7 +93,7 @@
     <string name="project">Project</string>
     <string name="official_account">Official</string>
     <string name="mine">Mine</string>
-    <string name="mine_points">My scores</string>
+    <string name="mine_points">Dialog</string>
     <string name="mine_blog">My blog</string>
     <string name="mine_nuggets">Nuggets</string>
     <string name="mine_github">My Github</string>

@@ -24,6 +24,8 @@ open class BaseHttpException(
          * 此变量用于表示在网络请求过程中抛出了异常
          */
         const val CODE_ERROR_LOCAL_UNKNOWN = -1024520
+
+        const val CODE_TOKEN_INVALID = 401
     }
     /**
      * 是否是由于服务器返回的 code != successCode 导致的异常
@@ -52,6 +54,9 @@ class ServerCodeBadException(errorCode: Int, errorMessage: String) :
  * 请求过程抛出异常
  * @param throwable
  */
-class LocalBadException(throwable: Throwable) :
+class LocalBadException(val throwable: Throwable) :
     BaseHttpException(CODE_ERROR_LOCAL_UNKNOWN, throwable.message
         ?: "", throwable)
+
+
+class TokenInvalidException : BaseHttpException(CODE_TOKEN_INVALID, "token已失效", null)

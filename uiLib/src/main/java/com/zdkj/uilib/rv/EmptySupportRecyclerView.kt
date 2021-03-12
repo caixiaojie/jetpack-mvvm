@@ -1,0 +1,62 @@
+package com.zdkj.uilib.rv
+
+import android.content.Context
+import android.util.AttributeSet
+import android.view.View
+import androidx.recyclerview.widget.RecyclerView
+
+class EmptySupportRecyclerView : RecyclerView {
+
+    private var emptyView: View? = null
+
+    private var emptyCount = 0
+
+    private val observer = object : RecyclerView.AdapterDataObserver() {
+
+        override fun onChanged() {
+            showEmptyView()
+        }
+
+        override fun onItemRangeInserted(positionStart: Int, itemCount: Int) {
+            showEmptyView()
+        }
+
+        override fun onItemRangeRemoved(positionStart: Int, itemCount: Int) {
+            showEmptyView()
+        }
+    }
+
+    constructor(context: Context) : super(context)
+
+    constructor(context: Context, attrs: AttributeSet) : super(context, attrs)
+
+    constructor(context: Context, attrs: AttributeSet, defStyle: Int) : super(context, attrs, defStyle)
+
+    private fun showEmptyView() {
+        val adapter = adapter
+        if (adapter != null) {
+            if (adapter.itemCount == emptyCount) {
+                emptyView?.visibility = View.VISIBLE
+            } else {
+                emptyView?.visibility = View.GONE
+            }
+        }
+    }
+
+    override fun setAdapter(adapter: Adapter<*>?) {
+        super.setAdapter(adapter)
+        if (adapter != null) {
+            adapter.registerAdapterDataObserver(observer)
+            observer.onChanged()
+        }
+    }
+
+    /**
+     * 设置列表为空时展示的控件，这里的 emptyCount 用来指定，
+     * 当 adapter 中当数据为多少当时候表示列表为空（因如果为 adapter 设置了头部或底部当情况）
+     */
+    fun setEmptyView(emptyView: View, emptyCount: Int = 0) {
+        this.emptyView = emptyView
+        this.emptyCount = emptyCount
+    }
+}

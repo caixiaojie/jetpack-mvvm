@@ -8,11 +8,9 @@ import com.cxj.jetpackmvvm.ui.main.MainActivity
 import com.cxj.jetpackmvvm.R
 import com.cxj.jetpackmvvm.base.BaseVMActivity
 import com.cxj.jetpackmvvm.databinding.ActivityLoginBinding
-import com.cxj.jetpackmvvm.ext.toast
+import com.zdkj.ktx.ext.toast
 import com.cxj.jetpackmvvm.model.bean.Title
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import org.jetbrains.anko.indeterminateProgressDialog
-import org.jetbrains.anko.toast
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class LoginActivity : BaseVMActivity() {

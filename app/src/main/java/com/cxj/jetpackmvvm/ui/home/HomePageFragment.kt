@@ -9,8 +9,8 @@ import androidx.viewpager2.widget.ViewPager2
 import com.cxj.jetpackmvvm.R
 import com.cxj.jetpackmvvm.base.BaseVMFragment
 import com.cxj.jetpackmvvm.databinding.FragmentHomeBinding
-import com.cxj.jetpackmvvm.ext.startKtxActivity
-import com.cxj.jetpackmvvm.ext.toast
+import com.zdkj.ktx.ext.startKtxActivity
+import com.zdkj.ktx.ext.toast
 import com.cxj.jetpackmvvm.model.bean.BannerBean
 import com.cxj.jetpackmvvm.model.pojo.QueryHomeArticle
 import com.cxj.jetpackmvvm.ui.article.*

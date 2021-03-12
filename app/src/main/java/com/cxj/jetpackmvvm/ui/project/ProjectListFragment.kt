@@ -5,11 +5,10 @@ import android.os.Bundle
 import androidx.core.os.bundleOf
 import androidx.lifecycle.Observer
 import com.cxj.jetpackmvvm.R
-import com.cxj.jetpackmvvm.base.BaseVMFragment
 import com.cxj.jetpackmvvm.base.BaseVMLazyFragment
 import com.cxj.jetpackmvvm.databinding.FragmentProjectListBinding
-import com.cxj.jetpackmvvm.ext.startKtxActivity
-import com.cxj.jetpackmvvm.ext.toast
+import com.zdkj.ktx.ext.startKtxActivity
+import com.zdkj.ktx.ext.toast
 import com.cxj.jetpackmvvm.model.pojo.QueryArticle
 import com.cxj.jetpackmvvm.ui.article.*
 import com.cxj.jetpackmvvm.ui.home.HomePageAdapter

@@ -21,6 +21,18 @@ class ProjectViewModelNew : BaseViewModel() {
     val projectTreeData = MutableLiveData<List<ProjectClassify>>()
     val projectArticleData = MutableLiveData<List<Article>>()
 
+    fun testTokenInvalid() {
+        remoteDataSource.enqueueLoading(
+            {
+                myPage(2,"2")
+            }
+        ) {
+            onSuccess {
+
+            }
+        }
+    }
+
     fun getProjectTree() {
         remoteDataSource.enqueueLoading(
             {

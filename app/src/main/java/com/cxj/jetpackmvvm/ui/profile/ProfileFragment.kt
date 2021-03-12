@@ -3,12 +3,16 @@ package com.cxj.jetpackmvvm.ui.profile
 import android.graphics.Color
 import android.os.Bundle
 import com.cxj.jetpackmvvm.R
-import com.cxj.jetpackmvvm.base.BaseVMFragment
 import com.cxj.jetpackmvvm.databinding.FragmentProfileBinding
 import com.cxj.jetpackmvvm.model.bean.ProfileItem
+import com.cxj.jetpackmvvm.ui.project.ProjectViewModelNew
+import com.cxj.reacthttp.base.BaseVMFragment
+import com.cxj.reacthttp.dialog.DialogActivity
+import com.cxj.reacthttp.dialog.TipsActivity
 import com.google.android.material.appbar.AppBarLayout.OnOffsetChangedListener
 import com.gyf.immersionbar.ImmersionBar
 import com.qmuiteam.qmui.util.QMUIStatusBarHelper
+import com.zdkj.ktx.ext.startKtxActivity
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlin.math.abs
 
@@ -30,7 +34,7 @@ class ProfileFragment : BaseVMFragment<FragmentProfileBinding>(R.layout.fragment
             return fragment
         }
     }
-
+    private val mViewModel by getViewModel(ProjectViewModelNew::class.java)
     private val profileAdapter by lazy { ProfileAdapter() }
     private lateinit var nameArray: Array<String>
     private var profileItemList = ArrayList<ProfileItem>()
@@ -55,7 +59,17 @@ class ProfileFragment : BaseVMFragment<FragmentProfileBinding>(R.layout.fragment
 
             profileAdapter.run {
                 setOnItemClickListener { adapter, view, position ->
-
+                    when(position) {
+                        0 -> {
+                            startKtxActivity<DialogActivity>()
+                        }
+                        1 -> {
+                            startKtxActivity<TipsActivity>()
+                        }
+                        2 -> {
+                            mViewModel.testTokenInvalid()
+                        }
+                    }
                 }
             }
 

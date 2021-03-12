@@ -5,6 +5,8 @@ import com.cxj.jetpackmvvm.model.bean.ProjectClassify
 import com.cxj.jetpackmvvm.model.bean.User
 import com.cxj.jetpackmvvm.model.bean.WanResponse
 import com.cxj.reacthttp.bean.HttpWrapBean
+import com.cxj.reacthttp.bean.HttpWrapBean1
+import com.cxj.reacthttp.bean.MyPageBean
 import retrofit2.http.*
 
 /**
@@ -25,4 +27,8 @@ interface ApiService {
 
     @GET("project/list/{page}/json")
     suspend fun getProject(@Path("page") page: Int, @Query("cid") cid: Int): HttpWrapBean<ArticleList>
+
+    @GET("/wisdomWork/mobile/myPage")
+    suspend fun myPage(@Query("type") type: Int,@Query("userCode") userCode: String): HttpWrapBean1<MyPageBean>
+
 }

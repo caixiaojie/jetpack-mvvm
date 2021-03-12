@@ -5,12 +5,15 @@ import com.zdkj.reacthttp.callback.BaseRequestCallback
 import com.zdkj.reacthttp.coroutine.ICoroutineEvent
 import com.zdkj.reacthttp.exception.BaseHttpException
 import com.zdkj.reacthttp.exception.LocalBadException
+import com.zdkj.reacthttp.exception.ServerCodeBadException
+import com.zdkj.reacthttp.exception.TokenInvalidException
 import com.zdkj.reacthttp.viewmodel.IUIActionEvent
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.Job
 import okhttp3.OkHttpClient
+import retrofit2.HttpException
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.net.ConnectException
@@ -110,7 +113,7 @@ abstract class BaseRemoteDataSource<Api : Any>(
         return apiService
     }
 
-    protected fun handleException(throwable: Throwable, callback: BaseRequestCallback?) {
+    open fun handleException(throwable: Throwable, callback: BaseRequestCallback?) {
         if (callback == null) {
             return
         }
@@ -130,7 +133,7 @@ abstract class BaseRemoteDataSource<Api : Any>(
         }
     }
 
-    internal fun generateBaseExceptionReal(throwable: Throwable): BaseHttpException {
+    open fun generateBaseExceptionReal(throwable: Throwable): BaseHttpException {
         return generateBaseException(throwable).apply {
             exceptionRecord(this)
         }
@@ -143,6 +146,15 @@ abstract class BaseRemoteDataSource<Api : Any>(
      * 从而做到接口异常原因强提醒的效果，而不用去纠结 httpCode 到底是多少
      */
     protected open fun generateBaseException(throwable: Throwable): BaseHttpException {
+//        return if (throwable is BaseHttpException) {
+//            throwable
+//        } else {
+//            LocalBadException(throwable)
+//        }
+
+        if (throwable is ServerCodeBadException && throwable.errorCode == BaseHttpException.CODE_TOKEN_INVALID) {
+            return TokenInvalidException()
+        }
         return if (throwable is BaseHttpException) {
             throwable
         } else {

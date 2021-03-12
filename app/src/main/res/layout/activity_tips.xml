@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <androidx.core.widget.NestedScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:background="@color/gray"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:paddingTop="@dimen/dp_50"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.zdkj.uilib.button.NormalButton
+                app:btn_corner_radius="@dimen/dp_30"
+                app:btn_normal_color="@color/black"
+                app:btn_selected_color="@color/colorPrimary"
+                app:btn_disable_color="@color/light_gray"
+                app:btn_text_disable_color="@color/white"
+                app:btn_text_normal_color="@color/white"
+                android:id="@+id/btn_loading"
+                android:text="加载对话框 [不可取消|iOS风格]"
+                style="@style/MenuItemButton" />
+
+            <com.zdkj.uilib.button.NormalButton
+                android:id="@+id/btn_loading_custom"
+                android:text="加载对话框 [不可取消|自定义]"
+                style="@style/MenuItemButton" />
+
+            <com.zdkj.uilib.button.NormalButton
+                android:id="@+id/btn_loading_cancelable"
+                android:text="加载对话框 [可取消|iOS风格]"
+                style="@style/MenuItemButton" />
+
+            <com.zdkj.uilib.button.NormalButton
+                android:id="@+id/btn_loading_cancelable_long"
+                android:text="加载对话框 [可取消|长文本|安卓风格]"
+                style="@style/MenuItemButton" />
+
+            <com.zdkj.uilib.button.NormalButton
+                android:id="@+id/btn_edit"
+                android:text="可编辑对话框"
+                style="@style/MenuItemButton" />
+
+            <com.zdkj.uilib.button.NormalButton
+                android:id="@+id/btn_city_choose"
+                android:text="城市选择器"
+                style="@style/MenuItemButton" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

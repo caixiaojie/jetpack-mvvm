@@ -11,6 +11,7 @@ import com.scwang.smart.refresh.layout.api.RefreshLayout
 import com.scwang.smart.refresh.layout.listener.DefaultRefreshHeaderCreator
 import com.tencent.bugly.crashreport.CrashReport
 import com.tencent.mmkv.MMKV
+import com.zdkj.uilib.UIX
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 import kotlin.properties.Delegates
@@ -51,6 +52,7 @@ class App : Application() {
             modules(appModule)
         }
         MMKV.initialize(this)
+        UIX.init(this)
         //debug 设置为true release设置为false
         CrashReport.initCrashReport(applicationContext, C.BUGLY_APPID, true);
     }

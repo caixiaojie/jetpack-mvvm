@@ -68,7 +68,7 @@
 	<string name="collection_failed">收藏失敗</string>
 	<string name="collection">收藏</string>
 	<string name="cancel_collection">取消收藏</string>
-	<string name="my_collection">我的收藏</string>
+	<string name="my_collection">Tips</string>
 	<string name="page_is_not_collection">當前頁面不可收藏</string>
 	<string name="copy_succeeded">複製成功，可直接進行粘貼</string>
 	<string name="not_currently_logged_in">當前未登錄</string>
@@ -92,7 +92,7 @@
 	<string name="project">項目</string>
 	<string name="official_account">公眾號</string>
 	<string name="mine">我的</string>
-	<string name="mine_points">我的積分</string>
+	<string name="mine_points">Dialog</string>
 	<string name="mine_blog">我的博客</string>
 	<string name="mine_nuggets">掘金</string>
 	<string name="mine_github">我的Github</string>

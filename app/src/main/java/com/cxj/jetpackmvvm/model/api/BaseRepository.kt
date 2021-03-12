@@ -4,7 +4,7 @@ import android.util.Log
 import com.cxj.jetpackmvvm.App
 import com.cxj.jetpackmvvm.model.bean.WanResponse
 import com.cxj.jetpackmvvm.base.WanResult
-import com.cxj.jetpackmvvm.ext.toast
+import com.zdkj.ktx.ext.toast
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.coroutineScope
 import java.io.IOException

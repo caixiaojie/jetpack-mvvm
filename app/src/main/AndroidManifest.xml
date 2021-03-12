@@ -46,6 +46,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.article.ArticleActivity" />
+        <activity android:name="com.cxj.reacthttp.dialog.TipsActivity" />
+        <activity android:name="com.cxj.reacthttp.dialog.DialogActivity" />
     </application>
 
 </manifest>

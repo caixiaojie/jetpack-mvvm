@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="uix_address_pick_result">Address:</string>
+
+    <string name="uix_rating_dialog_title">Rate for App</string>
+    <string name="uix_rating_confirm">Confirm</string>
+    <string name="uix_rating_cancel">Cancel</string>
+    <string name="uix_rating_feedback_cancel">Reject</string>
+    <string name="uix_rating_feedback_confirm">Feedback</string>
+    <string name="uix_rating_feedback_content">Would you like to help us refine App by feedback?</string>
+    <string name="uix_rating_feedback_page_title">Feedback</string>
+    <string name="uix_rating_feedback_title">Sorry for not satisfying you</string>
+    <string name="uix_rating_market_cancel">Reject</string>
+    <string name="uix_rating_market_confirm">Rate</string>
+    <string name="uix_rating_market_content">Would you like to support developer by give a good rate in App store?</string>
+    <string name="uix_rating_market_title">Glad that you like our App</string>
+</resources>

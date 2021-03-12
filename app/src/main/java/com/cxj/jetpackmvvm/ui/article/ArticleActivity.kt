@@ -1,10 +1,9 @@
 package com.cxj.jetpackmvvm.ui.article
 
-import android.widget.Toast
 import com.cxj.jetpackmvvm.R
 import com.cxj.jetpackmvvm.base.BaseVMActivity
 import com.cxj.jetpackmvvm.databinding.ActivityArticleLayoutBinding
-import com.cxj.jetpackmvvm.ext.toast
+import com.zdkj.ktx.ext.toast
 import com.cxj.jetpackmvvm.util.WaterMarkUtil
 import com.gyf.immersionbar.ImmersionBar
 import com.qmuiteam.qmui.skin.QMUISkinManager
