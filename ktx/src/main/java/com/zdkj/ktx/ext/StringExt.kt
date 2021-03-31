@@ -19,3 +19,8 @@ fun <T> String?.notNull(f: () -> T, t: () -> T): T {
  * whether string only contains digits
  */
 fun String.areDigitsOnly() = matches(Regex("[0-9]+"))
+
+
+fun String?.valid() : Boolean =
+    this != null && !this.equals("null", true)
+            && this.trim().isNotEmpty()

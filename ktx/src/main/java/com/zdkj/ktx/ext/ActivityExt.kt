@@ -142,3 +142,31 @@ fun Activity.hideKeyboard(view: View) {
     inputMethodManager?.hideSoftInputFromWindow(view.windowToken, 0)
 }
 
+// Activity related
+//val firstName by getValue<String>("firstName") // String?
+//val lastName by getValueNonNull<String>("lastName") // String
+
+inline fun <reified  T : Any> Activity.getValue(
+    lable : String, defaultvalue : T? = null) = lazy{
+    val value = intent?.extras?.get(lable)
+    if (value is T) value else defaultvalue
+}
+
+inline fun <reified  T : Any> Activity.getValueNonNull(
+    lable : String, defaultvalue : T? = null) = lazy{
+    val value = intent?.extras?.get(lable)
+    requireNotNull((if (value is T) value else defaultvalue)){lable}
+}
+
+// Fragment related
+inline fun <reified T: Any> Fragment.getValue(lable: String, defaultvalue: T? = null) = lazy {
+    val value = arguments?.get(lable)
+    if (value is T) value else defaultvalue
+}
+
+inline fun <reified T: Any> Fragment.getValueNonNull(lable: String, defaultvalue: T? = null) = lazy {
+    val value = arguments?.get(lable)
+    requireNotNull(if (value is T) value else defaultvalue) { lable }
+}
+
+
