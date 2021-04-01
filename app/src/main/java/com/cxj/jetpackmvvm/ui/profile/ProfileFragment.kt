@@ -1,10 +1,16 @@
 package com.cxj.jetpackmvvm.ui.profile
 
+import android.content.Context
+import android.content.DialogInterface
 import android.graphics.Color
 import android.os.Bundle
+import androidx.activity.OnBackPressedCallback
+import androidx.appcompat.app.AlertDialog
 import com.cxj.jetpackmvvm.R
 import com.cxj.jetpackmvvm.databinding.FragmentProfileBinding
 import com.cxj.jetpackmvvm.model.bean.ProfileItem
+import com.cxj.jetpackmvvm.ui.main.MainActivity
+import com.cxj.jetpackmvvm.ui.main.MainViewModel
 import com.cxj.jetpackmvvm.ui.project.ProjectViewModelNew
 import com.cxj.reacthttp.base.BaseVMFragment
 import com.cxj.reacthttp.dialog.DialogActivity
@@ -14,6 +20,7 @@ import com.gyf.immersionbar.ImmersionBar
 import com.qmuiteam.qmui.util.QMUIStatusBarHelper
 import com.zdkj.ktx.ext.startKtxActivity
 import kotlinx.android.synthetic.main.fragment_home.*
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import kotlin.math.abs
 
 
@@ -34,7 +41,10 @@ class ProfileFragment : BaseVMFragment<FragmentProfileBinding>(R.layout.fragment
             return fragment
         }
     }
+    //测试
     private val mViewModel by getViewModel(ProjectViewModelNew::class.java)
+
+
     private val profileAdapter by lazy { ProfileAdapter() }
     private lateinit var nameArray: Array<String>
     private var profileItemList = ArrayList<ProfileItem>()
@@ -47,6 +57,11 @@ class ProfileFragment : BaseVMFragment<FragmentProfileBinding>(R.layout.fragment
         R.drawable.ic_github_black_24dp,
         R.drawable.ic_account_circle_black_24dp
     )
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+    }
 
 
     override fun initView() {

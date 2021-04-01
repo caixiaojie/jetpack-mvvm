@@ -12,13 +12,13 @@ class MainActivity : BaseVMActivity() {
         @JvmStatic
         fun start(context: Context) {
             val starter = Intent(context, MainActivity::class.java)
-            starter.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
+            starter.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
             context.startActivity(starter)
         }
     }
 
     private val viewModel by viewModel<MainViewModel>()
-    private val binding by binding<ActivityMainBinding>(R.layout.activity_main)
+    val binding by binding<ActivityMainBinding>(R.layout.activity_main)
 
 
     override fun initView() {
@@ -44,7 +44,7 @@ class MainActivity : BaseVMActivity() {
     override fun startObserve() {
     }
 
-    override fun isDoubleClickExit(): Boolean  = true
+    override fun isDoubleClickExit(): Boolean  = viewModel.getPage() ?: 0 == 0
 
 
 }

@@ -1,11 +1,16 @@
 package com.cxj.jetpackmvvm.ui.official
 
+import android.content.Context
 import android.os.Bundle
+import androidx.activity.OnBackPressedCallback
 import com.cxj.jetpackmvvm.R
 import com.cxj.jetpackmvvm.base.BaseVMFragment
 import com.cxj.jetpackmvvm.databinding.FragmentOfficialAccountsBinding
+import com.cxj.jetpackmvvm.ui.main.MainActivity
+import com.cxj.jetpackmvvm.ui.main.MainViewModel
 import com.gyf.immersionbar.ImmersionBar
 import kotlinx.android.synthetic.main.fragment_official_accounts.*
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 /**
  * <pre>
@@ -24,6 +29,7 @@ class OfficialAccountsFragment : BaseVMFragment<FragmentOfficialAccountsBinding>
             return fragment
         }
     }
+
     override fun initView() {
     }
 

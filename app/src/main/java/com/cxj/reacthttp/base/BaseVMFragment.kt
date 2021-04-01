@@ -1,18 +1,24 @@
 package com.cxj.reacthttp.base
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
+import androidx.activity.OnBackPressedDispatcher
 import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import com.cxj.jetpackmvvm.R
+import com.cxj.jetpackmvvm.ui.main.MainActivity
+import com.cxj.jetpackmvvm.ui.main.MainViewModel
 import com.gyf.immersionbar.ImmersionBar
 import com.zdkj.reacthttp.base.BaseReactiveFragment
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 /**
  * <pre>
@@ -31,6 +37,26 @@ abstract class BaseVMFragment<T : ViewDataBinding>(@LayoutRes val layoutId: Int)
         container: ViewGroup?,
     ): T =   DataBindingUtil.inflate<T>(inflater, layoutId, container, false).apply {
         lifecycleOwner = this@BaseVMFragment
+    }
+
+
+    /**
+     * 监听fragment返回键 返回首页
+     */
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        activity?.onBackPressedDispatcher?.addCallback(this,object : OnBackPressedCallback(true){
+            override fun handleOnBackPressed() {
+                //在基类判断 宿主activity是MainActivity时逻辑
+                if (activity is MainActivity) {
+                    val currentPage =  (activity as MainActivity).binding.container.mViewModel.getPage() ?: 0
+                    if (currentPage != 0) {
+                        (activity as MainActivity).binding.container.fragmentManger(0)
+                    }
+                }
+
+            }
+        })
     }
 
     override fun onCreateView(
@@ -57,6 +83,7 @@ abstract class BaseVMFragment<T : ViewDataBinding>(@LayoutRes val layoutId: Int)
         super.onVisible()
 
         // Called when the fragment is visible.
+
     }
 
     override fun onInvisible() {

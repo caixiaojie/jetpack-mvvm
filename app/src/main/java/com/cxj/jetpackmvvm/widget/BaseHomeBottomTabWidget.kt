@@ -24,7 +24,7 @@ abstract class BaseHomeBottomTabWidget @JvmOverloads constructor(
 
     private var mFragmentManager: FragmentManager? = null
     private var mFragments: ArrayList<Fragment>? = null
-    private lateinit var mViewModel: MainViewModel
+    lateinit var mViewModel: MainViewModel
     private var currentFragment: Fragment? = null
 
     /**
@@ -74,7 +74,7 @@ abstract class BaseHomeBottomTabWidget @JvmOverloads constructor(
      *
      * @param position 序号
      */
-    protected open fun fragmentManger(position: Int) {
+     open fun fragmentManger(position: Int) {
         mViewModel.setPage(position)
         val targetFg: Fragment = mFragments!![position]
         val transaction = mFragmentManager!!.beginTransaction()
