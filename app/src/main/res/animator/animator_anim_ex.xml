@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android" android:ordering="together">
+    <set>
+        <objectAnimator
+            android:duration="500"
+            android:propertyName="x"
+            android:valueTo="400"
+            android:valueType="intType" />
+        <objectAnimator
+            android:duration="500"
+            android:propertyName="y"
+            android:valueTo="300"
+            android:valueType="intType" />
+    </set>
+
+    <objectAnimator
+        android:duration="500"
+        android:propertyName="alpha"
+        android:valueTo="1f" />
+</set>
+
+<!--
+
+AnimatorSet set = (AnimatorSet) AnimatorInflater.loadAnimator(
+                myContext, R.anim.property_animator);
+        set.setTarget(myObject);
+        set.start();
+
+
+1.旋转
+
+  // 旋转360度
+                ObjectAnimator animator1 = ObjectAnimator.ofFloat(tv, "rotation", 0f, 360f);//旋转360度
+                animator1.setRepeatCount(-1);//无限循环
+                //animator1.setDuration(2000);//设置持续时间
+                //animator1.setRepeatCount(1000);//重复次数
+                // animator1.start();//动画开始
+2.放大缩小
+
+  ObjectAnimator animator = ObjectAnimator.ofFloat(tv, "scaleY", 1, 6, 1);//沿着Y轴放大
+                ObjectAnimator animator2 = ObjectAnimator.ofFloat(tv, "scaleX", 1, 6, 1);//沿着X轴放大
+
+3.平移
+
+ ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(head, "translationX", 0.0f, 350.0f, 0.0f);//沿着x轴平移
+ ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(head, "translationY", 0.0f, 350.0f, 0.0f);//沿着Y轴平移
+4.动画集合
+
+   AnimatorSet bouncer = new AnimatorSet();//创建一个动画集合类
+                bouncer.play(animator).with(animator2);//play:先播放animator with:同时播放animator2 after:在某动画后播放 before:再某动画前播放
+                bouncer.setDuration(2000);//持续时间
+                bouncer.start();//开始动画
+5.灰度
+
+ ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(head, "alpha", 1.0f, 0.3f, 1.0F);
+
+-->

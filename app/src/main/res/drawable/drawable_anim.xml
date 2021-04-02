@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="false"
+    android:variablePadding="true"
+    android:visible="true">
+    <item
+        android:drawable="@drawable/empty_icon"
+        android:duration="@integer/config_navAnimTime" />
+    <item
+        android:drawable="@drawable/android_logo"
+        android:duration="@integer/config_navAnimTime" />
+</animation-list>
+<!--
+ImageView rocketImage = (ImageView) findViewById(R.id.rocket_image);
+rocketImage.setBackgroundResource(R.drawable.rocket_thrust);
+
+rocketAnimation = (AnimationDrawable) rocketImage.getBackground();
+rocketAnimation.start();
+
+特别注意，AnimationDrawable的start()方法不能在Activity的onCreate方法中调运，因为AnimationDrawable还未完全附着到window上，所以最好的调运时机是onWindowFocusChanged()方法中。
+
+-->

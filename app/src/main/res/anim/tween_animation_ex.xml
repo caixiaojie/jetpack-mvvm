@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:duration="1000"
+    android:fillAfter="true"
+    android:fillBefore="false"
+    android:repeatMode="restart"
+    android:repeatCount="0"
+    android:shareInterpolator="false"
+    android:interpolator="@android:anim/accelerate_decelerate_interpolator"
+    android:startOffset="@integer/config_navAnimTime">
+    <!--
+    如果在一个set标签中包含多个动画效果，如果想让这些动画效果共享一个Interpolator。
+	 android:shareInterpolator = "true"
+
+	 如果不想共享一个interpolator，则设置android:shareInterpolator="false"，并且需要在每一个动画效果处添加interpolator。
+    -->
+    <alpha
+        android:interpolator="@android:anim/accelerate_decelerate_interpolator"
+        android:fromAlpha="1"
+        android:toAlpha="0" />
+    <!--
+        缩放起点X坐标（数值、百分数、百分数p，譬如50表示以当前View左上角坐标加50px为初始点、
+        50%表示以当前View的左上角加上当前View宽高的50%做为初始点、50%p表示以当前View的左
+        上角加上父控件宽高的50%做为初始点）
+    -->
+    <rotate
+        android:fromDegrees="0"
+        android:pivotX="50%"
+        android:pivotY="50%"
+        android:toDegrees="360" />
+    <!--
+    初始X轴缩放比例，1.0表示无变化
+    -->
+    <scale
+        android:fromXScale="1"
+        android:fromYScale="1"
+        android:pivotX="50%"
+        android:pivotY="50%"
+        android:toXScale="0.5"
+        android:toYScale="0.5" />
+    <translate
+        android:fromXDelta="0.5"
+        android:fromYDelta="0.5"
+        android:toXDelta="1"
+        android:toYDelta="1" />
+
+</set>
+<!--
+ImageView spaceshipImage = (ImageView) findViewById(R.id.spaceshipImage);
+Animation hyperspaceJumpAnimation = AnimationUtils.loadAnimation(this, R.anim.hyperspace_jump);
+spaceshipImage.startAnimation(hyperspaceJumpAnimation);
+
+特别特别注意：补间动画执行之后并未改变View的真实布局属性值。切记这一点，
+譬如我们在Activity中有一个 Button在屏幕上方，我们设置了平移动画移动到屏幕下方然
+后保持动画最后执行状态呆在屏幕下方，这时如果点击屏幕下方动画执行之后的Button是没
+有任何反应的，而点击原来屏幕上方没有Button的地方却响应的是点击Button的事件。
+
+
+-->
