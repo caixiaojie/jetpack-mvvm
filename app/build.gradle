@@ -24,9 +24,17 @@ android {
     }
 
     buildTypes {
+        debug {
+            debuggable true
+            minifyEnabled false
+
+            buildConfigField("String", "SERVER_IP", "\"http://172.30.200.99:9898\"")
+            manifestPlaceholders = [umeng_key:'124214',baidu_key:'12421']
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField("String", "SERVER_IP", "\"http://172.30.200.99:9898\"")
         }
     }
     compileOptions {
@@ -110,5 +118,6 @@ dependencies {
     implementation project(path: ':reactHttp')
     implementation project(path: ':ktx')
     implementation project(path: ':uiLib')
+    implementation project(path: ':libImage')
 
 }
