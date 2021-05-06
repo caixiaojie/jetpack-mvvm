@@ -3,6 +3,6 @@ include ':uiLib'
 include ':ktx'
 include ':reactHttp'
 include ':app'
-includeBuild '../VersionPlugin'
-//includeBuild("VersionPlugin")
+//includeBuild '../VersionPlugin'
+includeBuild("VersionPlugin")
 rootProject.name = "JetpackMvvm"
