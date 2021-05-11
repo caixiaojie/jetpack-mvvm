@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
     <application
         android:name=".App"
         android:allowBackup="true"
@@ -39,15 +40,23 @@
         <activity
             android:theme="@style/AppTheme.Launcher"
             android:name=".ui.welcome.WelcomeActivity" >
+
+        </activity>
+        <activity android:name=".ui.article.ArticleActivity" />
+        <activity android:name="com.cxj.reacthttp.dialog.TipsActivity" />
+        <activity android:name="com.cxj.reacthttp.dialog.DialogActivity" />
+        <!--音视频开发之旅（一）三种方式绘制图片-->
+        <activity android:name="com.cxj.av.day1.CanvasImageActivity" >
+
+        </activity>
+        <!--音视频开发之旅（二）AudioRecord录制PCM音频-->
+        <activity android:name="com.cxj.av.day2.AudioRecordActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.article.ArticleActivity" />
-        <activity android:name="com.cxj.reacthttp.dialog.TipsActivity" />
-        <activity android:name="com.cxj.reacthttp.dialog.DialogActivity" />
     </application>
 
 </manifest>

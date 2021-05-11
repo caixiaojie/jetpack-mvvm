@@ -125,16 +125,16 @@ public class UserDataBaseSource {
      * 获取数据集合
      */
     public void getAll() {
-        UserDataBase.getDatabase().waitDao().findAll()
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Consumer<List<User>>() {
-                    @Override
-                    public void accept(List<User> users) throws Exception {
-//                        DebugUtil.error("----waitList.size():" + waits.size());
-//                        DebugUtil.error("----waitList:" + waits.toString());
-                    }
-                });
+//        UserDataBase.getDatabase().waitDao().findAll()
+//                .subscribeOn(Schedulers.io())
+//                .observeOn(AndroidSchedulers.mainThread())
+//                .subscribe(new Consumer<List<User>>() {
+//                    @Override
+//                    public void accept(List<User> users) throws Exception {
+////                        DebugUtil.error("----waitList.size():" + waits.size());
+////                        DebugUtil.error("----waitList:" + waits.toString());
+//                    }
+//                });
     }
     /**
      * 获取全部数据集合

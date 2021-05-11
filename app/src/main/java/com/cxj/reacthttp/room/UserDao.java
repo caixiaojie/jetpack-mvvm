@@ -26,8 +26,8 @@ public interface UserDao {
      *
      * @return 用户信息列表，可以用作Rx链式调用
      */
-    @Query("SELECT * FROM User")
-    Flowable<List<User>> findAll();
+//    @Query("SELECT * FROM User")
+//    Flowable<List<User>> findAll();
 
 
     /**
@@ -69,8 +69,8 @@ public interface UserDao {
      * @param id the bean id.
      * @return the task with taskId.
      */
-    @Query("SELECT * FROM User WHERE id = :id")
-    Flowable<User> getUserById(int id);
+//    @Query("SELECT * FROM User WHERE id = :id")
+//    Flowable<User> getUserById(int id);
 
 //    /**
 //     * 清空数据库
